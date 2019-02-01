@@ -64,7 +64,7 @@ public class MainAppPage extends AppCompatActivity {
             setContentView(R.layout.activity_seller_main_page);
 
             Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-            toolbar.setTitle("NITKart Sellers");
+            toolbar.setTitle("Yurly Sellers");
             setSupportActionBar(toolbar);
 
             searchbar = (EditText)findViewById(R.id.searchBar);
@@ -155,7 +155,7 @@ public class MainAppPage extends AppCompatActivity {
             setContentView(R.layout.activity_main_app_page);
 
             Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-            toolbar.setTitle("NITKart");
+            toolbar.setTitle("Yurly");
             setSupportActionBar(toolbar);
 
             searchbar = (EditText)findViewById(R.id.searchBar);

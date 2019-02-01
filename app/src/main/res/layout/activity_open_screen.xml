@@ -19,7 +19,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:padding="32dp"
-        android:text="Welcome!"
+        android:text="Welkom"
         android:textSize="48sp" />
 
     <LinearLayout
