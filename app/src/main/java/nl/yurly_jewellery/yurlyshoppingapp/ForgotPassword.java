@@ -13,7 +13,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class forgotPassword extends AppCompatActivity {
+public class ForgotPassword extends AppCompatActivity {
 
     EditText email_input;
     Button submit;

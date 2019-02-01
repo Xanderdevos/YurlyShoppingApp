@@ -27,7 +27,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class newUser extends AppCompatActivity {
+public class NewUser extends AppCompatActivity {
 
     private static final String TAG = OpenScreen.class.getSimpleName();
     ProgressBar progressBar;
@@ -186,8 +186,8 @@ public class newUser extends AppCompatActivity {
                         // the auth state listener will be notified and logic to handle the
                         // signed in user can be handled in the listener.
                         if (!task.isSuccessful()) {
-//                            Toast.makeText(newUser.this, R.string.auth_failed, Toast.LENGTH_SHORT).show();
-                            Toast.makeText(newUser.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+//                            Toast.makeText(NewUser.this, R.string.auth_failed, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(NewUser.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             setViews(true);
                             isRegistrationClicked = false;
                             progressBar.setVisibility(View.GONE);

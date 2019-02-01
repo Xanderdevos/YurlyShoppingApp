@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="nl.yurly_jewellery.yurlyshoppingapp.newUser"
+            android:name="nl.yurly_jewellery.yurlyshoppingapp.NewUser"
             android:screenOrientation="portrait" />
 
         <activity
@@ -39,7 +39,7 @@
 
         <activity android:name="nl.yurly_jewellery.yurlyshoppingapp.ShoppingCartWindow" />
         <activity android:name="nl.yurly_jewellery.yurlyshoppingapp.CheckOutScreen" />
-        <activity android:name="nl.yurly_jewellery.yurlyshoppingapp.forgotPassword" />
+        <activity android:name="nl.yurly_jewellery.yurlyshoppingapp.ForgotPassword" />
         <activity android:name="nl.yurly_jewellery.yurlyshoppingapp.IndividualProductSeller" />
         <activity android:name="nl.yurly_jewellery.yurlyshoppingapp.AddProductForm"></activity>
     </application>

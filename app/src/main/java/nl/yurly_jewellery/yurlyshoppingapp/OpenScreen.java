@@ -110,7 +110,7 @@ public class OpenScreen extends AppCompatActivity {
         resetPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(OpenScreen.this, forgotPassword.class));
+                startActivity(new Intent(OpenScreen.this, ForgotPassword.class));
             }
         });
 
@@ -118,7 +118,7 @@ public class OpenScreen extends AppCompatActivity {
         newUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent newUserReg = new Intent(OpenScreen.this, newUser.class);
+                Intent newUserReg = new Intent(OpenScreen.this, NewUser.class);
                 newUserReg.putExtra("seller", false);
                 startActivity(newUserReg);
                 finish();
@@ -129,7 +129,7 @@ public class OpenScreen extends AppCompatActivity {
         newSeller.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent newSellerReg = new Intent(OpenScreen.this, newUser.class);
+                Intent newSellerReg = new Intent(OpenScreen.this, NewUser.class);
                 newSellerReg.putExtra("seller", true);
                 startActivity(newSellerReg);
                 finish();
