@@ -1,0 +1,99 @@
+{
+  "project_info": {
+    "project_number": "912814149518",
+    "firebase_url": "https://yurlyapp.firebaseio.com",
+    "project_id": "yurlyapp",
+    "storage_bucket": "yurlyapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:912814149518:android:15891c2ae69ca605",
+        "android_client_info": {
+          "package_name": "nl.yurly_jewellery.yurly"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "912814149518-7j2cnth7tsp3jq6adslpboabrigr8j15.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "nl.yurly_jewellery.yurly",
+            "certificate_hash": "16a795d0b99b73d335a5bd821abaa96556e9f059"
+          }
+        },
+        {
+          "client_id": "912814149518-v7n48irtqvcr3bj68a0ebaja5pi2t3cq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwcosQCxDqleYa3TXrqXhC9gNtCTndEJA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "912814149518-v7n48irtqvcr3bj68a0ebaja5pi2t3cq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:912814149518:android:d6f432b8dc138b0e",
+        "android_client_info": {
+          "package_name": "nl.yurly_jewellery.yurlyshoppingapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "912814149518-rdd93j63if1frg38a6caesi57ua67ioo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "nl.yurly_jewellery.yurlyshoppingapp",
+            "certificate_hash": "16a795d0b99b73d335a5bd821abaa96556e9f059"
+          }
+        },
+        {
+          "client_id": "912814149518-v7n48irtqvcr3bj68a0ebaja5pi2t3cq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwcosQCxDqleYa3TXrqXhC9gNtCTndEJA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "912814149518-v7n48irtqvcr3bj68a0ebaja5pi2t3cq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
