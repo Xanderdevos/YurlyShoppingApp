@@ -23,7 +23,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:padding="16dp"
-        android:text="Registration"
+        android:text="Registratie"
         android:textSize="32sp" />
 
     <LinearLayout
@@ -39,7 +39,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="First Name"
+            android:hint="Voornaam"
             android:inputType="textPersonName" />
 
         <EditText
@@ -48,7 +48,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:ems="10"
-            android:hint="Last Name"
+            android:hint="Achternaam"
             android:inputType="textPersonName" />
 
         <!--<EditText-->
@@ -84,7 +84,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:ems="10"
-            android:hint="Verify Password"
+            android:hint="Herhaal wachtwoord"
             android:inputType="textPassword" />
     </LinearLayout>
 

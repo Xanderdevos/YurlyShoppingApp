@@ -282,12 +282,12 @@ public class MainAppPage extends AppCompatActivity {
 
             items.add(new ShoppingItem(
 
-                    item.child("productID").getValue() != null ? item.child("productID").getValue().toString() : null,
-                    item.child("name").getValue() != null ? item.child("name").getValue().toString() : null,
-                    item.child("type").getValue() != null ? item.child("type").getValue().toString() : null,
-                    item.child("description").getValue() != null ? item.child("description").getValue().toString() : null,
-                    Integer.valueOf(item.child("price").getValue() != null ? item.child("price").getValue().toString() : null),
-                    Integer.valueOf(item.child("quantity").getValue() != null ? item.child("quantity").getValue().toString() : null)
+                    item.child("productID").getValue().toString(),
+                    item.child("name").getValue().toString(),
+                    item.child("type").getValue().toString(),
+                    item.child("description").getValue().toString(),
+                    Integer.valueOf(item.child("price").getValue().toString()),
+                    Integer.valueOf(item.child("quantity").getValue().toString())
 
             ));
 
@@ -312,12 +312,12 @@ public class MainAppPage extends AppCompatActivity {
                 e.printStackTrace();
             }
 
-            quantity = Integer.valueOf(snap.child("quantity").getValue() != null ? snap.child("quantity").getValue().toString() : null);
+            quantity = Integer.valueOf(snap.child("quantity").getValue().toString());
             items.add(new ShoppingItem(
-                    snap.child("productID").getValue() != null ? snap.child("productID").getValue().toString() : null,
-                    snap.child("title").getValue() != null ? snap.child("title").getValue().toString() : null,
-                    snap.child("type").getValue() != null ? snap.child("type").getValue().toString() : null,
-                    snap.child("description").getValue() != null ? snap.child("description").getValue().toString() : null,
+                    snap.child("productID").getValue().toString(),
+                    snap.child("title").getValue().toString(),
+                    snap.child("type").getValue().toString(),
+                    snap.child("description").getValue().toString(),
                     itemPrice,
                     quantity
             ));
