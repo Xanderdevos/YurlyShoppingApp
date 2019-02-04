@@ -47,6 +47,7 @@ public class MainAppPage extends AppCompatActivity {
     ShoppingListAdapter adapter;
     ProgressBar progressBar;
     EditText searchbar;
+    String ProductID;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
 
     TextView ifSellerListEmpty;
@@ -281,6 +282,7 @@ public class MainAppPage extends AppCompatActivity {
         for (DataSnapshot item : dataSnapshot.getChildren()) {
 
             items.add(new ShoppingItem(
+
 
                     item.child("productID").getValue().toString(),
                     item.child("name").getValue().toString(),

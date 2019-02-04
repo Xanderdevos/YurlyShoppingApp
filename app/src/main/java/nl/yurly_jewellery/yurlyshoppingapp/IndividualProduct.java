@@ -99,19 +99,19 @@ public class IndividualProduct extends AppCompatActivity {
 
         ip = getResources().getString(R.string.ip);
 
-        name = (TextView) findViewById(R.id.productNameIndividualProduct);
+        name = findViewById(R.id.productNameIndividualProduct);
         name.setText(item.getTitle());
 
-        description = (TextView) findViewById(R.id.productDescriptionIndividualProduct);
+        description = findViewById(R.id.productDescriptionIndividualProduct);
         description.setText(item.getDescription());
 
-        quantityView = (TextView) findViewById(R.id.quantityProductPage);
+        quantityView = findViewById(R.id.quantityProductPage);
         quantityView.setText(String.valueOf(quantity));
 
         ((TextView) findViewById(R.id.productPriceIndividualProduct))
                 .setText(item.getPrice());
 
-        productImage = (ImageView) findViewById(R.id.productImageIndividualProduct);
+        productImage = findViewById(R.id.productImageIndividualProduct);
         Picasso.with(getApplicationContext())
                 .load(ip + String.valueOf(item.getProductID()) + ".jpg")
                 .fit()
@@ -146,7 +146,9 @@ public class IndividualProduct extends AppCompatActivity {
                     //      this is to prevent creation of new cart every time user wants to see stuff
                     // else create a new cart and update
 
-                    if (!isCartEmpty){
+                    if (!isCartEmpty) {
+
+                    } else {
                         // Get the cart contents and then update as necessary
                         cartItems = new ArrayList<>();
                         int tempIndex = 0;

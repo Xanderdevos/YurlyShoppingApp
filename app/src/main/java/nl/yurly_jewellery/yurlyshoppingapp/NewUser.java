@@ -105,7 +105,7 @@ public class NewUser extends AppCompatActivity {
                         prodslist.put("products", prods);
 
                         Map<String, Object> state = new HashMap<>();
-                        state.put("isEmpty", Boolean.TRUE);
+                        state.put("isCartEmpty", Boolean.TRUE);
 
                         // Updating the database for the seller
                         myRef.updateChildren(prodslist);
