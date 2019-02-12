@@ -98,14 +98,14 @@ public class NewUser extends AppCompatActivity {
                         myRef = FirebaseDatabase.getInstance().getReference("sellers").child(user.getUid());
                         myRef.child(user.getUid()).push();
 
-//                        Dummy product sold by any seller who has 0 products
+                        //  Dummy product sold by any seller who has 0 products
                         ArrayList<ShoppingItem> prods = new ArrayList<>();
                         prods.add(new ShoppingItem("", "", "", "", -1, -1));
                         Map<String, Object> prodslist = new HashMap<>();
                         prodslist.put("products", prods);
 
                         Map<String, Object> state = new HashMap<>();
-                        state.put("isCartEmpty", Boolean.TRUE);
+                        state.put("isProdsEmpty", Boolean.TRUE);
 
                         // Updating the database for the seller
                         myRef.updateChildren(prodslist);
@@ -121,21 +121,30 @@ public class NewUser extends AppCompatActivity {
             }
         };
 
+        // registerbutton is pressed
         mRegister = (Button) findViewById(R.id.registerButton);
         mRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 setViews(false);
+
+                // get the text from the editTextView and turn them into strings
                 email = username.getText().toString();
                 password = pass.getText().toString();
                 passwordVerification = passVerification.getText().toString();
+
                 if (password.equals(passwordVerification) && !password.equals("") && !passwordVerification.equals("")) {
+
                     createAccount();
+
                 } else {
+
+                    // popup that show that the passwords aren't the same
                     Snackbar.make(findViewById(R.id.newUserPage), "Passwords don't match", Snackbar.LENGTH_SHORT).show();
                     pass.setText("");
                     passVerification.setText("");
                     setViews(true);
+
                 }
             }
         });
@@ -197,6 +206,7 @@ public class NewUser extends AppCompatActivity {
                 });
     }
 
+    // send verification email when user is created
     private void sendVerificationEmail() {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         user.sendEmailVerification()

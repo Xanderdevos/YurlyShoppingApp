@@ -11,9 +11,11 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity android:name=".Favorite"></activity>
+        <activity android:name=".MyAccount" />
+        <activity android:name=".HomePage" />
         <activity
-            android:name="nl.yurly_jewellery.yurlyshoppingapp.OpenScreen"
+            android:name=".OpenScreen"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,26 +24,23 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="nl.yurly_jewellery.yurlyshoppingapp.NewUser"
+            android:name=".NewUser"
             android:screenOrientation="portrait" />
-
         <activity
-            android:name="nl.yurly_jewellery.yurlyshoppingapp.MainAppPage"
+            android:name=".SearchPage"
             android:label="@string/title_activity_main_app_page"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
-            android:name="nl.yurly_jewellery.yurlyshoppingapp.IndividualProduct"
+            android:name=".IndividualProduct"
             android:label="@string/title_activity_individual_product"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-
-        <activity android:name="nl.yurly_jewellery.yurlyshoppingapp.ShoppingCartWindow" />
-        <activity android:name="nl.yurly_jewellery.yurlyshoppingapp.CheckOutScreen" />
-        <activity android:name="nl.yurly_jewellery.yurlyshoppingapp.ForgotPassword" />
-        <activity android:name="nl.yurly_jewellery.yurlyshoppingapp.IndividualProductSeller" />
-        <activity android:name="nl.yurly_jewellery.yurlyshoppingapp.AddProductForm"></activity>
+        <activity android:name=".ShoppingCartWindow" />
+        <activity android:name=".CheckOutScreen" />
+        <activity android:name=".ForgotPassword" />
+        <activity android:name=".IndividualProductSeller" />
+        <activity android:name=".AddProductForm" />
     </application>
 
 </manifest>

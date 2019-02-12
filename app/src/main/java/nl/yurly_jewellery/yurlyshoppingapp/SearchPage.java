@@ -1,6 +1,7 @@
 package nl.yurly_jewellery.yurlyshoppingapp;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
@@ -10,15 +11,19 @@ import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -31,27 +36,24 @@ import java.text.NumberFormat;
 import java.text.ParseException;
 import java.util.ArrayList;
 
-import nl.yurly_jewellery.yurlyshoppingapp.AddProductForm;
-import nl.yurly_jewellery.yurlyshoppingapp.IndividualProduct;
-import nl.yurly_jewellery.yurlyshoppingapp.IndividualProductSeller;
-import nl.yurly_jewellery.yurlyshoppingapp.OpenScreen;
-import nl.yurly_jewellery.yurlyshoppingapp.R;
-import nl.yurly_jewellery.yurlyshoppingapp.ShoppingCartWindow;
-import nl.yurly_jewellery.yurlyshoppingapp.ShoppingItem;
-import nl.yurly_jewellery.yurlyshoppingapp.ShoppingListAdapter;
+public class SearchPage extends AppCompatActivity {
 
-public class MainAppPage extends AppCompatActivity {
-
-    public final String TAG = MainAppPage.class.getSimpleName();
+    public final String TAG = SearchPage.class.getSimpleName();
     ListView shoppingItemView;
     ShoppingListAdapter adapter;
     ProgressBar progressBar;
     EditText searchbar;
     String ProductID;
+    ImageView productImage;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
 
     TextView ifSellerListEmpty;
     Button addProduct;
+
+    //declare variables toolbar
+    private Toolbar bottomActionBar;
+    //declare variables buttons actionbar
+    private ImageButton menuButton, shoppingButton, accountButton, searchButton, favoriteButton;
 
     private Boolean exit = false;
     private ArrayList<ShoppingItem> shoppingItems;
@@ -79,6 +81,8 @@ public class MainAppPage extends AppCompatActivity {
             ifSellerListEmpty = (TextView) findViewById(R.id.ifSellerListEmpty);
 
             addProduct = (Button) findViewById(R.id.sellerAddProduct);
+
+            productImage = findViewById(R.id.productImageIndividualProduct);
 
             DatabaseReference myref = database.getReference("sellers/" +
                     FirebaseAuth.getInstance().getCurrentUser().getUid());
@@ -112,6 +116,7 @@ public class MainAppPage extends AppCompatActivity {
                                 for(ShoppingItem x: shoppingItems){
                                     if (textlength <= x.getTitle().length()) {
                                         if (x.getTitle().toLowerCase().contains(charSequence.toString().toLowerCase())) {
+
                                             tempShoppingItems.add(x);
                                         }
                                     }
@@ -139,35 +144,85 @@ public class MainAppPage extends AppCompatActivity {
                 public void onClick(View view) {
                     // add new layout and add product
                     // then search
-                    startActivity(new Intent(MainAppPage.this, AddProductForm.class));
+                    startActivity(new Intent(SearchPage.this, AddProductForm.class));
                 }
             });
 
             shoppingItemView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                    Intent productIntent = new Intent(MainAppPage.this, IndividualProductSeller.class);
+                    Intent productIntent = new Intent(SearchPage.this, IndividualProductSeller.class);
                     productIntent.putExtra("product", shoppingItems.get(i));
                     startActivity(productIntent);
                 }
             });
 
         } else {
-            setContentView(R.layout.activity_main_app_page);
+            setContentView(R.layout.activity_search_page);
 
-            Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+           /* Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
             toolbar.setTitle("Yurly");
-            setSupportActionBar(toolbar);
+            setSupportActionBar(toolbar); */
 
             searchbar = (EditText)findViewById(R.id.searchBar);
 
-            FloatingActionButton shoppingCart = (FloatingActionButton) findViewById(R.id.cartMainPage);
+            //actionbar configurations
+            //configure toolbar as actionbar
+            bottomActionBar = (Toolbar) findViewById(R.id.my_toolbar);
+            setSupportActionBar(bottomActionBar);
+            bottomActionBar.addView(LayoutInflater.from(this).inflate(R.layout.actionbar, null, false));
+
+            //configure actionbar buttons
+            menuButton = findViewById(R.id.btn_menu);
+            menuButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(getApplicationContext(), "Home Button Clicked", Toast.LENGTH_SHORT).show();
+                }
+            });
+
+            searchButton = findViewById(R.id.btn_search);
+            searchButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    Toast.makeText(getApplicationContext(), "Already on this page", Toast.LENGTH_SHORT).show();
+
+                }
+            });
+
+            accountButton = findViewById(R.id.btn_acc);
+            accountButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    // start other activity
+                    startActivity(new Intent(SearchPage.this, MyAccount.class));
+
+                }
+            });
+
+            shoppingButton = findViewById(R.id.btn_bag);
+            shoppingButton.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View v) {
+
+                    startActivity(new Intent(SearchPage.this, ShoppingCartWindow.class));
+                    shoppingButton.setBackgroundColor(Color.WHITE);
+
+
+                }
+            });
+
+            // button to cart
+            /*FloatingActionButton shoppingCart = (FloatingActionButton) findViewById(R.id.cartMainPage);
             shoppingCart.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     startActivity(new Intent(getApplicationContext(), ShoppingCartWindow.class));
                 }
-            });
+            });*/
 
             progressBar = (ProgressBar) findViewById(R.id.mainPageProgressBar);
             shoppingItemView = (ListView) findViewById(R.id.shoppingList);
@@ -224,13 +279,15 @@ public class MainAppPage extends AppCompatActivity {
             shoppingItemView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                    Intent productIntent = new Intent(MainAppPage.this, IndividualProduct.class);
+                    Intent productIntent = new Intent(SearchPage.this, IndividualProduct.class);
                     productIntent.putExtra("product", shoppingItems.get(i));
                     startActivity(productIntent);
                 }
             });
 
         }
+
+
     }
 
 
@@ -281,8 +338,14 @@ public class MainAppPage extends AppCompatActivity {
 
         for (DataSnapshot item : dataSnapshot.getChildren()) {
 
-            items.add(new ShoppingItem(
+           /* productImage = findViewById(R.id.productImageIndividualProduct);
+            Picasso.with(getApplicationContext())
+                    .load("https://i.stack.imgur.com/gw3sp.png")
+                    // .load(snap.child("imageURL").getValue().toString())
+                    .fit()
+                    .into(productImage);*/
 
+            items.add(new ShoppingItem(
 
                     item.child("productID").getValue().toString(),
                     item.child("name").getValue().toString(),
@@ -297,6 +360,7 @@ public class MainAppPage extends AppCompatActivity {
 
         return items;
     }
+
 
     public static ArrayList<ShoppingItem> setUpList(DataSnapshot dataSnapshot) {
 

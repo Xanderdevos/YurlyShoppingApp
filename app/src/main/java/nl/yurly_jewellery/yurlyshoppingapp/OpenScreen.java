@@ -60,7 +60,7 @@ public class OpenScreen extends AppCompatActivity {
                                 @Override
                                 public void onDataChange(DataSnapshot dataSnapshot) {
 
-                                    Intent intent = new Intent(getApplicationContext(), nl.yurly_jewellery.yurlyshoppingapp.MainAppPage.class);
+                                    Intent intent = new Intent(getApplicationContext(), SearchPage.class);
 
                                     if (dataSnapshot.exists()) {
                                         intent.putExtra("isuserseller", true);
