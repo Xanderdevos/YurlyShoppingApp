@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">Yurly App</string>
+    <string name="register">Nieuwe gebruiker? \n<u>Klik om te Registeren</u></string>
+    <string name="forget_password_email_entry">Voer hier je emailadres in</string>
+    <string name="submit">Bevestig</string>
+    <string name="reset_password_toast">Controleer je email voor het maken van een nieuw wachtwoord.</string>
+    <string name="sellerRegister">Registeer als verkoper</string>
+    <string name="ifSellerListEmpty">It\'s empty in here. \nAdd something!</string>
+
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Wachtwoord</string>
+    <string name="action_sign_in">Login of registeer</string>
+    <string name="action_sign_in_short">Login</string>
+    <string name="error_invalid_email">Dit is volwaardig emailadres</string>
+    <string name="error_invalid_password">Dit wachtwoord is te kort</string>
+    <string name="error_incorrect_password">Dit wachtwoord is fout</string>
+    <string name="error_field_required">Vul alle velden in</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="auth_failed">Failed. Please retry</string>
+    <string name="title_activity_login">Login</string>
+    <string name="title_activity_main_app_page">MainAppPage</string>
+    <string name="action_settings">Instellingen</string>
+    <string name="logout">Loguit</string>
+    <string name="forgot_password"><u>Wachtwoord vergeten?</u></string>
+    <string name="title_activity_individual_product">IndividualProduct</string>
+
+    <!-- Add the IP address of the image server here and build the APK or deploy the server somewhere and fix the IP Address in the apk below -->
+    <string name="ip"></string>
+
+</resources>

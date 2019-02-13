@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/newUserPage"
+    tools:context="nl.yurly_jewellery.yurlyshoppingapp.NewUser"><![CDATA[>
+
+    ]]>
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/registrationPageProgressBar"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+    <ScrollView
+        android:id="@+id/ScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/registrationForm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginLeft="48dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="48dp"
+            android:layout_marginRight="48dp"
+            android:layout_marginBottom="48dp"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:id="@+id/imageLogoView"
+                android:layout_width="240dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center_horizontal"
+                android:cropToPadding="false"
+                app:srcCompat="@drawable/logo_high_resolution"
+                tools:layout_editor_absoluteX="84dp"
+                tools:layout_editor_absoluteY="60dp" />
+
+
+            <!--<EditText-->
+            <!--android:id="@+id/phoneNumber"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="8dp"-->
+            <!--android:ems="10"-->
+            <!--android:hint="Phone Number"-->
+            <!--android:inputType="phone" />-->
+
+            <EditText
+                android:id="@+id/usernameRegistration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="@string/prompt_email"
+                android:inputType="textEmailAddress" />
+
+            <EditText
+                android:id="@+id/editTextRepeat"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Herhaal E-mail adres"
+                android:inputType="textEmailAddress"
+                tools:layout_editor_absoluteX="99dp"
+                tools:layout_editor_absoluteY="327dp" />
+
+            <EditText
+                android:id="@+id/passwordRegistration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="@string/prompt_password"
+                android:inputType="textPassword" />
+
+            <EditText
+                android:id="@+id/passwordRegistrationConfirmation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="Herhaal wachtwoord"
+                android:inputType="textPassword" />
+
+            <EditText
+                android:id="@+id/firstName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Voornaam"
+                android:inputType="textPersonName" />
+
+
+            <EditText
+                android:id="@+id/middlenameText"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Tussenvoegsel"
+                android:inputType="textPersonName" />
+
+
+            <EditText
+                android:id="@+id/lastName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="Achternaam"
+                android:inputType="textPersonName" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Geslacht"
+                    android:textSize="18sp"
+
+                <RadioButton
+                    android:id="@+id/menRadioButton"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="Man" />
+
+                <RadioButton
+                    android:id="@+id/womenRadioButton"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="Vrouw" />
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/counrtyText"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Land"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/cityText"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Plaats"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/streetnameText"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Straat"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/postalCodeText"
+                android:layout_width="320dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="Postcode"
+
+                android:inputType="textPostalAddress" />
+
+            <LinearLayout
+                android:layout_width="320dp"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/numberText"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Huisnummer"
+                    android:inputType="number" />
+
+                <EditText
+                    android:id="@+id/addOnText"
+                    android:layout_width="212dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="Toevoeging"
+                    android:inputType="textPersonName" />
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/phoneNumberText"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Telefoonnummer"
+                android:inputType="phone" />
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/registerButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ScrollView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="48dp"
+        android:layout_marginRight="48dp"
+        android:text="Registreer"
+        android:textColor="@color/whiteColor"
+        android:background="@color/blueColor"
+        />
+
+</RelativeLayout>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="nl.yurly_jewellery.yurlyshoppingapp.OpenScreen">
+
+
+    <!-- shows when retrieving data from the Firebase-->
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/loginPageProgressBar"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+<!-- determines the positions of all elements -->
+
+    <LinearLayout
+        android:id="@+id/loginForm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="48dp"
+        android:orientation="vertical"
+        >
+
+        <ImageView
+            android:id="@+id/imageLogoView"
+            android:layout_width="240dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center_horizontal"
+            android:cropToPadding="false"
+            app:srcCompat="@drawable/logo_high_resolution"
+            tools:layout_editor_absoluteX="84dp"
+            tools:layout_editor_absoluteY="60dp" />
+
+        <EditText
+            android:id="@+id/usernameLogin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:ems="10"
+            android:hint="@string/prompt_email"
+            android:inputType="textEmailAddress" />
+
+        <EditText
+            android:id="@+id/passwordLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:hint="@string/prompt_password"
+            android:inputType="textPassword" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/loginForm"
+        android:layout_centerHorizontal="true"
+        android:text="login"
+        android:layout_marginLeft="48dp"
+        android:layout_marginRight="48dp"
+        android:textColor="@color/whiteColor"
+        android:background="@color/blueColor"/>
+
+
+    <TextView
+        android:id="@+id/forgotPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/loginButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp"
+        android:text="@string/forgot_password"
+        android:textSize="16sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="16dp"
+        android:layout_below="@id/forgotPassword">
+
+        <TextView
+            android:layout_gravity="center"
+            android:id="@+id/newSellerRegistration"
+            android:layout_width="wrap_content"
+            android:layout_weight="0.5"
+            android:layout_margin="8dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:text="@string/sellerRegister"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_gravity="center"
+            android:id="@+id/newUserRegistration"
+            android:layout_margin="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:layout_marginBottom="12dp"
+            android:text="@string/register"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+</RelativeLayout>
